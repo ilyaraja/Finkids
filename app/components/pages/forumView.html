@@ -1,0 +1,362 @@
+<!-- <div id="page_content">
+    <div id="page_heading" data-uk-sticky="{ top: 48, media: 960 }">
+        <div class="heading_actions">
+            <a href="javascript:void(0)" data-uk-tooltip="{pos:'bottom'}" title="Users"><i class="md-icon material-icons">group</i></a>
+            <a href="javascript:void(0)" data-uk-tooltip="{pos:'bottom'}" title="Settings"><i class="md-icon material-icons">settings</i></a>
+            <div data-uk-dropdown>
+                <i class="md-icon material-icons">&#xE5D4;</i>
+                <div class="uk-dropdown uk-dropdown-small">
+                    <ul class="uk-nav">
+                        <li><a href="javascript:void(0)">Action</a></li>
+                        <li><a href="javascript:void(0)">Other Action</a></li>
+                        <li><a href="javascript:void(0)">Other Action</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h1>Community Forum</h1>
+        <span class="uk-text-muted uk-text-upper uk-text-small">123 users online</span>
+    </div>
+    <div id="page_content_inner">
+        <ul class="uk-breadcrumb">
+            <li><a href="javascript:void(0)">Forum</a></li>
+            <li><a href="javascript:void(0)">General Discussions</a></li>
+            <li class="uk-active"><span>Thread</span></li>
+        </ul>
+        <div class="uk-grid">
+            <div class="uk-width-medium-2-3">
+                <div class="md-card">
+                    <div class="md-card-content">
+                        <div class="uk-flex uk-flex-middle">
+                            <div class="uk-flex-item-1">
+                                <h2 class="heading_b">General Discussions</h2>
+                                <span class="uk-text-muted">134 users online</span>
+                            </div>
+                            <div>
+                                <i class="md-icon material-icons">&#xE5D5;</i>
+                                <div class="uk-position-relative uk-display-inline-block" data-uk-dropdown="{pos:'bottom-right'}">
+                                    <i class="md-icon material-icons">&#xE5D4;</i>
+                                    <div class="uk-dropdown">
+                                        <ul class="uk-nav">
+                                            <li><a href="javascript:void(0)">Action 1</a></li>
+                                            <li><a href="javascript:void(0)">Action 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul class="md-list md-list-addon uk-margin-top">
+                            <li ng-repeat="thread in threads">
+                                <div class="md-list-addon-element">
+                                    <img class="md-user-image md-list-addon-avatar" ng-src="{{ thread.userAvatar }}" alt=""/>
+                                </div>
+                                <div class="md-list-content">
+                                    <div class="uk-flex uk-flex-middle">
+                                        <div class="uk-width-8-10">
+                                            <h4 class="uk-margin-remove uk-text-truncate">
+                                                <a ui-sref="restricted.pages.forum.single" class="uk-link-muted">{{ thread.title }}</a>
+                                            </h4>
+                                            <div>
+                                                <span class="uk-badge uk-badge-danger uk-float-none uk-badge-inline uk-margin-small-right" ng-if="thread.sticky">Sticky</span>
+                                                <span class="uk-text-muted">Most recent by <a href="javascript:void(0)" class="uk-link-muted">{{ thread.recentAnswer }}</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-10">
+                                            <i class="material-icons md-color-green-500 md-24">remove_red_eye</i> {{ thread.views }}
+                                        </div>
+                                        <div class="uk-width-1-10">
+                                            <i class="material-icons md-color-amber-500 md-24">comment</i> {{ thread.comments }}
+                                    </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md-card">
+                    <div class="md-card-content">
+                        <div class="uk-flex uk-flex-middle">
+                            <div class="uk-flex-item-1">
+                                <h2 class="heading_b">Product Reviews</h2>
+                                <span class="uk-text-muted">74 users online</span>
+                            </div>
+                            <div>
+                                <i class="md-icon material-icons">&#xE5D5;</i>
+                                <div class="uk-position-relative uk-display-inline-block" data-uk-dropdown="{pos:'bottom-right'}">
+                                    <i class="md-icon material-icons">&#xE5D4;</i>
+                                    <div class="uk-dropdown">
+                                        <ul class="uk-nav">
+                                            <li><a href="javascript:void(0)">Action 1</a></li>
+                                            <li><a href="javascript:void(0)">Action 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul class="md-list md-list-addon uk-margin-top">
+                            <li ng-repeat="thread in threads | limitTo:3:1">
+                                <div class="md-list-addon-element">
+                                    <img class="md-user-image md-list-addon-avatar" ng-src="{{ thread.userAvatar }}" alt=""/>
+                                </div>
+                                <div class="md-list-content">
+                                    <div class="uk-flex uk-flex-middle">
+                                        <div class="uk-width-8-10">
+                                            <h4 class="uk-margin-remove uk-text-truncate">
+                                                <a ui-sref="restricted.pages.forum.single" class="uk-link-muted">{{ thread.title }}</a>
+                                            </h4>
+                                            <div>
+                                                <span class="uk-badge uk-badge-danger uk-float-none uk-badge-inline uk-margin-small-right" ng-if="thread.sticky">Sticky</span>
+                                                <span class="uk-text-muted">Most recent by <a href="javascript:void(0)" class="uk-link-muted">{{ thread.recentAnswer }}</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-10">
+                                            <i class="material-icons md-color-green-500 md-24">remove_red_eye</i> {{ thread.views }}
+                                        </div>
+                                        <div class="uk-width-1-10">
+                                            <i class="material-icons md-color-amber-500 md-24">comment</i> {{ thread.comments }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-3">
+                <div class="md-card">
+                    <div class="md-card-content">
+                        <h2 class="heading_b">Categories</h2>
+                        <ul class="uk-nav uk-nav-side uk-nav-parent-icon uk-margin-top">
+                            <li><a href="javascript:void(0)">General Discussions</a></li>
+                            <li class="uk-parent uk-open">
+                                <a href="javascript:void(0)">Product Reviews</a>
+                                <ul class="uk-nav-sub">
+                                    <li>
+                                        <a href="javascript:void(0)">Samsung</a>
+                                        <ul>
+                                            <li><a href="javascript:void(0)">Mobile Phones</a></li>
+                                            <li><a href="javascript:void(0)">TV</a></li>
+                                            <li><a href="javascript:void(0)">Sound System</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="javascript:void(0)">Apple</a>
+                                        <ul>
+                                            <li class="uk-active"><a href="javascript:void(0)">iPhone</a></li>
+                                            <li><a href="javascript:void(0)">iPad</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md-card">
+                    <div class="md-card-content">
+                        <h2 class="heading_b">Tags</h2>
+                        <div class="uk-margin uk-badge-group">
+                            <span class="uk-badge uk-badge-default uk-badge-large"><a href="javascript:void(0)">SEO (12)</a></span>
+                            <span class="uk-badge uk-badge-large uk-badge-danger"><a href="javascript:void(0)">Samsung (43)</a></span>
+                            <span class="uk-badge uk-badge-default uk-badge-large"><a href="javascript:void(0)">Mobile (8)</a></span>
+                            <span class="uk-badge uk-badge-default uk-badge-large"><a href="javascript:void(0)">Import (3)</a></span>
+                            <span class="uk-badge uk-badge-large uk-badge-success"><a href="javascript:void(0)">Apple (23)</a></span>
+                            <span class="uk-badge uk-badge-default uk-badge-large"><a href="javascript:void(0)">Language (1)</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- My stocks -->
+
+<!-- <div id="page_content">
+    <div id="page_content_inner">
+
+        <div class="md-card">
+            <div class="md-card-content">
+                <div class="Ins-head">
+
+                    <b class="uk-text-primary"> My Stocks</b>
+                </div>
+                <br><br>
+                <div class="Ins-head">
+
+                    <b class="uk-text-primary">Index Performance</b>
+                </div> <br>
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-2">
+                        <div class="md-card">
+                            <div class="md-card-content">
+                                <h3>NIFTY 50 </h3>
+                                <h2>16500 <i class="material-icons md-48 uk-text-danger">
+                                        arrow_drop_down
+                                    </i> <i class="uk-text-danger uk-text-left-medium">-275(2.33%) </i></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-medium-1-2">
+                        <div class="md-card">
+                            <div class="md-card-content">
+                                <h3>SENSEX</h3>
+                                <h2>16500 <i class="material-icons md-48 uk-text-success">
+                                        arrow_drop_up
+                                    </i> <i class="uk-text-success uk-text-left-medium">+275(2.33%) </i>
+                                </h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="Ins-head">
+
+                    <b class="uk-text-primary">Stocks Search</b>
+                </div>
+                <div style="margin-left: 50px;">
+                    <div class="uk-width-small-1-4">
+                        <label for="stock_list_search"> Search Here <span class="material-icons md-30">
+                                search
+                            </span> </label>
+                        <input class="md-input" type="text" id="stock_list_search" ng-model="q.name" md-input />
+                    </div>
+                </div> <br>
+
+                <div class="md-card">
+                    <div class="md-card uk-margin-medium-bottom">
+                        <div class="md-card-content">
+                            <div class="stock_list_search">
+                                <div class="uk-overflow-container">
+                                    <table class="uk-table uk-table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <h5>Company Name</h5>
+                                                </th>
+                                                <th>
+                                                    <h5>Stock Code</h5>
+                                                </th>
+                                                <th>
+                                                    <h5>Stock Price </h5>
+                                                </th>
+                                                <th>
+                                                    <h5>Previous Close Price
+                                                </th>
+                                                <th>
+                                                    <h5>Change</h5>
+                                                </th>
+                                                <th>
+                                                    <h5>Change %</h5>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> CITY UNION BANK</td>
+                                                <td>CUB</td>
+                                                <td>175</td>
+                                                <td>170</td>
+                                                <td>
+                                                    + 5
+                                                </td>
+                                                <td>+ 3%</td>
+                                            </tr>
+                                            <tr>
+                                                <td> DEVIS LABORATORIES</td>
+                                                <td>DEVLAB</td>
+                                                <td>220.5</td>
+                                                <td>221.4 </td>
+                                                <td>+ 8.9</td>
+                                                <td>- 4.6%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HCL TECHNOLOGIES</td>
+                                                <td>HCLTECH</td>
+                                                <td>2555.0</td>
+                                                <td>2355.0</td>
+                                                <td>+ 200</td>
+                                                <td>+ 18%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HDFC BANK</td>
+                                                <td>HDFCBNK</td>
+                                                <td>5245.5</td>
+                                                <td>5445.2</td>
+                                                <td>- 200.3</td>
+                                                <td>- 19.4%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <ul class="uk-pagination">
+                                        <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span>
+                                        </li>
+                                        <li class="uk-active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><span>&hellip;</span></li>
+                                        <li><a href="#">20</a></li>
+                                        <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Ins-head">
+
+                    <b class="uk-text-primary">Stock Snapshot</b>
+                </div>
+                <div style="margin-left: 50px;">
+                    <div class="uk-width-small-1-4">
+                        <label for="stock_list_search">Stock Name Search Here <span class="material-icons md-30">
+                                search
+                            </span> </label>
+                        <input class="md-input" type="text" id="stock_list_search" ng-model="q.name" md-input />
+                    </div>
+                    <br>
+
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-2">
+                            <div class="md-card">
+                                <div class="md-card-content">
+                                    <h3>Current Market price: <strong style="margin-left:200px ;">7</strong></h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <div class="md-card">
+                                <div class="md-card-content">
+                                    <h3>Face value:<strong style="margin-left:200px ;">2</strong></h3>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-2">
+                            <div class="md-card">
+                                <div class="md-card-content">
+                                    <h3>52 Week High:<strong style="margin-left:200px ;">120</strong></h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <div class="md-card">
+                                <div class="md-card-content">
+                                    <h3>52 Week Low:<strong style="margin-left:200px ;">7</strong></h3>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
